@@ -6,11 +6,10 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 09:55:15 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/05 22:55:55 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/13 11:23:08 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
 
 int		precis_px(t_printf *flags, char *str)

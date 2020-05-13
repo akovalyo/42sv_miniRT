@@ -19,33 +19,21 @@ Simple X-Window Interface Library for students
 **Linking minilibx on ubuntu:**
 
 ```
-gcc -I minilibx -L minilibx -lmlx -lm -lX11 -lXext main.c
+gcc *.c -I minilibx -L minilibx -lmlx -lm -lX11 -lXext main.c
+```
+
+**Linking minilibx and libft on ubuntu**:
+
+```
+gcc *.c -I minilibx -L minilibx -lmlx -lm -lX11 -lXext -I libft/includes -L libft -lft
 ```
 
 **Linking minilibx on macOS:**
 
 ```
-gcc -I minilibx -L minilibx -lmlx -framework OpenGL -framework AppKit main.c
+gcc *.c -I minilibx -L minilibx -lmlx -framework OpenGL -framework AppKit
 ```
 
-***
-
-**Open window:**
-
-```c
-#include "mlx.h"
-
-int main()
-{
-    void *mlx_ptr;
-    void *win_ptr;
-
-    mlx_ptr = mlx_init();
-    win_ptr = mlx_new_window(mlx_ptr, 500, 500, "Hello World!");
-    mlx_loop(mlx_ptr);
-    return (0);
-}
-```
 ***
 
 # MAN miniLibX
@@ -122,6 +110,23 @@ Note that the MiniLibX can handle an arbitrary number of separate windows.
 
 If **mlx_new_window()** fails to create a new window (for wathever reason), it will return NULL, otherwise a non-null pointer is returned as a window identifier. **mlx_clear_window** and **mlx_destroy_window** right now return nothing.
 
+**Example - new window:**
+
+```c
+#include "mlx.h"
+
+int main()
+{
+    void *mlx_ptr;
+    void *win_ptr;
+
+    mlx_ptr = mlx_init();
+    win_ptr = mlx_new_window(mlx_ptr, 500, 500, "Hello World!");
+    mlx_loop(mlx_ptr);
+    return (0);
+}
+```
+
 ***
 
 # MAN MiniLibX - Drawing inside windows
@@ -162,6 +167,12 @@ Theses three values must be set inside the integer to display the right color. T
 ```
 
 While filling the integer, make sure you avoid endian problems. Remember that the "blue" byte should always be the least significant one.
+
+**Example - draw pixel:**
+
+```c
+mlx_pixel_put(mlx_ptr, win_ptr, 250, 250, 0xFFFFFF);
+```
 
 ***
 

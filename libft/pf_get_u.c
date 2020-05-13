@@ -6,11 +6,10 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 08:57:32 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/05 22:56:03 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/13 11:23:20 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
 
 void	get_u(t_printf *flags, va_list *ap)

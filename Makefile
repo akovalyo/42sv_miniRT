@@ -6,7 +6,7 @@
 #    By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 21:26:34 by akovalyo          #+#    #+#              #
-#    Updated: 2020/05/05 18:16:25 by akovalyo         ###   ########.fr        #
+#    Updated: 2020/05/13 11:24:39 by akovalyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ fclean: clean
 re: fclean all
 
 test:
-	@gcc -g -o test main.c $(SRC) -L ./libft -lft -I ./libft/includes
+	@gcc -g -o tst tst.c $(SRC) -L ./libft -lft -I ./libft/includes
 	@./test
 	@rm test
 	

@@ -6,11 +6,10 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 10:50:01 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/05 22:54:45 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/13 11:22:51 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
 
 void	format_checker(t_printf *flags, const char *str, va_list *ap)

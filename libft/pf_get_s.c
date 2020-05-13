@@ -6,11 +6,10 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 10:29:44 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/05 22:55:59 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/13 11:23:14 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
 
 void	width_s(t_printf *flags, char *str)

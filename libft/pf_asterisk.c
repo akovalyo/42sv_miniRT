@@ -6,11 +6,10 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 12:37:57 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/05 22:54:37 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/13 11:22:33 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
 
 void	analyse_asterisk(t_printf *flags, const char *str, va_list *ap)

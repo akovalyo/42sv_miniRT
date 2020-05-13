@@ -6,11 +6,10 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 08:49:49 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/05 22:55:49 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/13 11:23:02 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
 
 int		precis_diu(t_printf *flags, char *str)

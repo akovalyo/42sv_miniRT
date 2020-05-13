@@ -6,11 +6,10 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/31 18:11:08 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/05 22:54:13 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/13 11:22:14 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
 
 void	analyse_flags(t_printf *flags, const char *str)
