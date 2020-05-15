@@ -6,24 +6,14 @@
 #    By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 21:26:34 by akovalyo          #+#    #+#              #
-#    Updated: 2020/05/13 11:24:39 by akovalyo         ###   ########.fr        #
+#    Updated: 2020/05/15 12:17:20 by akovalyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
 FLAGS=-Wall -Wextra -Werror -c
-SRC=ft_printf.c \
-		get_c.c \
-		get_s.c \
-		get_di.c \
-		get_u.c \
-		get_p.c \
-		get_x.c \
-		checker.c \
-		analyse.c \
-		helpers.c \
-		print.c \
-		asterisk.c
+SRC=main.c \
+	read.c
 
 OF = $(SRC:%.c=%.o)
 
@@ -46,9 +36,9 @@ fclean: clean
 re: fclean all
 
 test:
-	@gcc -g -o tst tst.c $(SRC) -L ./libft -lft -I ./libft/includes
-	@./test
-	@rm test
+	@gcc $(SRC) -I minilibx -L minilibx -lmlx -lm -lX11 -lXext -I libft/includes -L libft -lft -I includes
+
+
 	
 memory:
 	@gcc -g -o test main.c $(SRC) -L ./libft -lft -I ./libft/includes
