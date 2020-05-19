@@ -25,7 +25,7 @@ int		start_wind(t_scene *scn)
 	scn->img_addr = mlx_get_data_addr(scn->img, &(scn->bits_per_pixel),
 					&(scn->line_length), &(scn->endian));
 	scn->win = mlx_new_window(scn->mlx, scn->res.x, scn->res.y, "miniRT");
-	
+	return (0);
 }
 
 int close_win(int key, t_scene *scn)

@@ -36,10 +36,11 @@ fclean: clean
 
 re: fclean all
 
+test_lin:
+	@gcc $(SRC) -g -I minilibx_lin -L minilibx_lin -lmlx -lm -lX11 -lXext -I libft/includes -L libft -lft -I includes
+
 test:
-	@gcc $(SRC) -g -I minilibx -L minilibx -lmlx -lm -lX11 -lXext -I libft/includes -L libft -lft -I includes
-
-
+	@gcc $(SRC) -g -I minilibx -L minilibx -lmlx -framework OpenGL -framework AppKit -I libft/includes -L libft -lft -I includes
 	
 memory:
 	@gcc -g -o test main.c $(SRC) -L ./libft -lft -I ./libft/includes
