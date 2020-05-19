@@ -6,7 +6,7 @@
 #    By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 21:26:34 by akovalyo          #+#    #+#              #
-#    Updated: 2020/05/05 23:56:54 by akovalyo         ###   ########.fr        #
+#    Updated: 2020/05/18 11:05:32 by akovalyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,7 @@ SRC = ft_memset.c \
 	  ft_ftoa.c \
 	  ft_strchr_ind.c \
 	  ft_printf.c \
+	  ft_strarraylen.c \
 	  pf_get_c.c \
 	  pf_get_s.c \
 	  pf_get_di.c \

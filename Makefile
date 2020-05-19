@@ -6,14 +6,15 @@
 #    By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 21:26:34 by akovalyo          #+#    #+#              #
-#    Updated: 2020/05/15 12:17:20 by akovalyo         ###   ########.fr        #
+#    Updated: 2020/05/18 16:45:09 by akovalyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
 FLAGS=-Wall -Wextra -Werror -c
 SRC=main.c \
-	read.c
+	read.c \
+	parser.c
 
 OF = $(SRC:%.c=%.o)
 
@@ -36,7 +37,7 @@ fclean: clean
 re: fclean all
 
 test:
-	@gcc $(SRC) -I minilibx -L minilibx -lmlx -lm -lX11 -lXext -I libft/includes -L libft -lft -I includes
+	@gcc $(SRC) -g -I minilibx -L minilibx -lmlx -lm -lX11 -lXext -I libft/includes -L libft -lft -I includes
 
 
 	
