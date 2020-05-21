@@ -113,6 +113,7 @@ int main()
         
     }
     mlx_put_image_to_window(ptr.mlx, ptr.win, img.img, 0, 0);
+    ft_printf("%d\n", draw.color);
     // ft_printf("%d\n",2);
     // mlx_pixel_put(mlx_ptr, win_ptr, 250, 250, 0xFFFFFF);
     //mlx_loop_hook(ptr.mlx, render_next_frame, &ptr);

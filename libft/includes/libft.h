@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/01 18:00:42 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/18 11:04:58 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/20 15:53:16 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,14 @@ void				ft_putnbr_fd(int n, int fd);
 ** Bonus part
 */
 
-t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstlast(t_list *lst);
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list				*ft_lstnew(void *content);
 
 /*
 ** Personal functions
@@ -129,5 +131,6 @@ char				*ft_ftoa_long(long double nbr, int precis, int sign);
 char				*ft_ftoa(double nbr, int precis);
 int					ft_strchr_ind(const char *s, char c);
 size_t 				ft_strarraylen(char **arr);
+double				ft_atof(char *nptr);
 
 #endif

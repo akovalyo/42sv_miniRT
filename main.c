@@ -6,16 +6,19 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 11:05:07 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/18 17:15:42 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/20 17:47:49 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
-
+#include <stdio.h>
 
 void init_data(t_scene *scn)
 {
 	scn->res.processed = 0;
+	scn->amb.processed = 0;
+	scn->cams = NULL;
+	scn->cam_count = 0;
 }
 
 int		start_wind(t_scene *scn)
@@ -40,6 +43,14 @@ int close_win(int key, t_scene *scn)
     return (0);
 }
 
+void test_cam(t_scene *scn)
+{
+	t_cam *tmp;
+	tmp = scn->cams->content;
+
+	printf("CAM NUM: %d\n", tmp->cam_num);
+}
+
 int		main(int argc, char **argv)
 {
 	t_scene scn;
@@ -51,6 +62,9 @@ int		main(int argc, char **argv)
 			return (-1);
 		start_wind(&scn);
 		mlx_hook(scn.win, 2, 1L<<0, close_win, &scn);
+
+		test_cam(&scn);
+
 		mlx_loop(scn.mlx);
 	}
 	else

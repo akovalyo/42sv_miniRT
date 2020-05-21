@@ -6,7 +6,7 @@
 #    By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 21:26:34 by akovalyo          #+#    #+#              #
-#    Updated: 2020/05/18 11:05:32 by akovalyo         ###   ########.fr        #
+#    Updated: 2020/05/20 15:48:39 by akovalyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,8 +66,8 @@ SRC = ft_memset.c \
       ft_putnbr_fd.c \
 	  ft_lstnew.c \
 	  ft_lstdelone.c \
-	  ft_lstdel.c \
- 	  ft_lstadd.c \
+	  ft_lstclear.c \
+ 	  ft_lstadd_front.c \
 	  ft_lstiter.c \
 	  ft_lstmap.c \
 	  ft_strlcpy.c \
@@ -89,6 +89,7 @@ SRC = ft_memset.c \
 	  ft_strchr_ind.c \
 	  ft_printf.c \
 	  ft_strarraylen.c \
+	  ft_atof.c \
 	  pf_get_c.c \
 	  pf_get_s.c \
 	  pf_get_di.c \

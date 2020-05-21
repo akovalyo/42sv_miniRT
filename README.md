@@ -1,5 +1,6 @@
 # 42sv_miniRT
 
+:building_construction: **Not completed** :stop_sign:
 
 This project is an introduction to the Raytracing.
 The goal is to make program that will render simple Computer-Generated-Images.
@@ -9,6 +10,45 @@ The goal is to make program that will render simple Computer-Generated-Images.
 **System:** Ubuntu 18.04.4 LTS
 
 **[minilibx linux](https://github.com/Artygo8/minilibx_linux)**
+
+***
+
+### Usage
+
+**Compile:**
+
+Ubuntu:
+
+```
+make linux
+```
+
+MacOS:
+```
+make
+```
+
+**Run:**
+
+```
+./minirt [scene.rt]
+```
+
+### Structure of rt-file
+
+```
+R   1920	    1080
+A   0.2		                                255,255,255
+
+c   -50,0,20        0,0,0       70
+l   -40,0,30                    0.7         255,255,255
+
+pl	0,0,0	        0,1.0,0                 255,0,255
+sp  0,0,20                      20          255,0,0
+sq	0,100,40	    0,0,1.0	    30          42,42,0
+cy  50.0,0.0,20.6   0,0,1.0   14.2  21.42   10,0,255
+tr  10,20,10        10,10,20    20,10,10    0,0,255
+```
 
 ***
 
