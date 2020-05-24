@@ -6,16 +6,16 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 09:24:46 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/05/20 10:07:56 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/05/21 12:09:35 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double	ft_atof(char *nptr)
+float	ft_atof(char *nptr)
 {
-	double	val;
-	double	signif;
+	float	val;
+	float	signif;
 	int		sign;
 
 	val = 0;
