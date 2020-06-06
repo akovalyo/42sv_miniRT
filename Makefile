@@ -6,29 +6,66 @@
 #    By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 21:26:34 by akovalyo          #+#    #+#              #
-#    Updated: 2020/05/18 16:45:09 by akovalyo         ###   ########.fr        #
+#    Updated: 2020/06/05 22:12:50 by akovalyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libftprintf.a
-FLAGS=-Wall -Wextra -Werror -c
+NAME=minirt
+FLAGS=-Wall -Wextra -Werror -o
+MAC_MLX_DIR = minilibx/
+LIN_MLX_DIR = minilibx_lin/
+MAC_FLAGS = -lmlx -framework OpenGL -framework AppKit
+LIN_FLAGS = -lmlx -lm -lX11 -lXext
+SRC_FOLDER = srcs/
+LIBFT_DIR = libft/
+LIBFT_INCL = libft/includes/
+INCL = includes/
+INCLLIN = incl_lin/
+INCLMAC = incl_mac/
 SRC=main.c \
 	read.c \
-	parser.c
+	parser.c \
+	vectors.c \
+	init.c \
+	window.c \
+	intersections.c \
+	reflections.c \
+	conversions.c \
+	parse_shapes.c \
+	utils.c \
+	create_shapes.c \
+	bmp.c \
+	memory.c \
+	math_vect.c \
+	math.c \
+	create_tools.c \
+	utils_amb.c
+
+SRCS = ${addprefix ${SRC_FOLDER}, ${SRC}}
 
 OF = $(SRC:%.c=%.o)
 
+.PHONY = all clean fclean re libft linux
+
 all: $(NAME)
 
-$(NAME):
-	@make -C libft/ re
-	@gcc $(FLAGS) -I ./libft/includes -c $(SRC)
-	@ar rc $(NAME) $(OF) libft/*.o
-	@ranlib $(NAME)
+libftcomp:
+	@make -C $(LIBFT_DIR) re
+
+mlxlin_comp:	
+	@make -C $(LIN_MLX_DIR) re
+
+mlx_comp:	
+	@make -C $(MAC_MLX_DIR) re
+
+$(NAME): mlx_comp libftcomp 
+	@gcc $(FLAGS) $(NAME) $(FLAGS) $(SRCS) -I $(MAC_MLX_DIR) -L $(MAC_MLX_DIR) $(MAC_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLMAC)
+	
+linux: mlxlin_comp libftcomp 
+	@gcc $(FLAGS) $(NAME) $(SRCS) -I $(LIN_MLX_DIR) -L $(LIN_MLX_DIR) $(LIN_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLLIN)
 
 clean:
-	@make -C libft/ clean
-	@rm -f $(OF)
+	@make -C $(LIBFT_DIR) clean
 
 fclean: clean 
 	@make -C libft/ fclean
@@ -37,18 +74,16 @@ fclean: clean
 re: fclean all
 
 test_lin:
-	@gcc $(SRC) -g -I minilibx_lin -L minilibx_lin -lmlx -lm -lX11 -lXext -I libft/includes -L libft -lft -I includes
+	@gcc $(FLAGS) $(NAME) -g $(SRCS) -I $(LIN_MLX_DIR) -L $(LIN_MLX_DIR) $(LIN_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLLIN)
 
 test:
-	@gcc $(SRC) -g -I minilibx -L minilibx -lmlx -framework OpenGL -framework AppKit -I libft/includes -L libft -lft -I includes
+	@gcc $(FLAGS) $(NAME) $(FLAGS) -g $(SRCS) -I $(MAC_MLX_DIR) -L $(MAC_MLX_DIR) $(MAC_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLMAC)
 	
-memory:
-	@gcc -g -o test main.c $(SRC) -L ./libft -lft -I ./libft/includes
-	@valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./test
-	@rm test
+memory_lin: 
+	@clang $(FLAGS) $(NAME) -g -fsanitize=address -fno-omit-frame-pointer $(SRCS) -I $(LIN_MLX_DIR) -L $(LIN_MLX_DIR) $(LIN_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLLIN)
 
-debug:
-	@gcc -g -o test main.c $(SRC) -L ./libft -lft -I ./libft/includes
+memory:
+	@clang $(FLAGS) $(NAME) -g -fsanitize=address -fno-omit-frame-pointer $(SRCS) $(MAC_MLX_DIR) -L $(MAC_MLX_DIR) $(MAC_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLMAC)
 
 norm:
-	@norminette -R CheckForbiddenSourceHeader $(SRC) printf.h libft/*.c libft/includes/libft.h
+	@norminette -R CheckForbiddenSourceHeader $(SRCS) $(INCL)*.h $(INCLLIN)*.h $(INCLMAC)*.h $(LIBFT_DIR)*.c $(LIBFT_INCL)*.h

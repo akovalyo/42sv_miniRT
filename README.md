@@ -11,6 +11,8 @@ The goal is to make program that will render simple Computer-Generated-Images.
 
 **[minilibx linux](https://github.com/Artygo8/minilibx_linux)**
 
+MacOS
+
 ***
 
 ### Usage
@@ -31,8 +33,11 @@ make
 **Run:**
 
 ```
-./minirt [scene.rt]
+./minirt scene.rt [--save] [NAME]
 ```
+\[--save] - (otional) save bmp file
+
+\[NAME] - (otional) name of the bmp file
 
 ### Structure of rt-file
 
@@ -49,6 +54,112 @@ sq	0,100,40	    0,0,1.0	    30          42,42,0
 cy  50.0,0.0,20.6   0,0,1.0   14.2  21.42   10,0,255
 tr  10,20,10        10,10,20    20,10,10    0,0,255
 ```
+
+### Resolution:
+
+*Can only be declared once in the scene.*
+
+* identifier: R
+
+* x render size
+
+* y render size
+
+### Ambient:
+
+*Can only be declared once in the scene.*
+
+* identifier: A
+
+* ambient lighting ratio in range \[0.0,1.0]
+
+* R,G,B colors in range \[0-255]
+
+### Camera:
+
+* identifier: c
+
+* x,y,z coordinates of the view point
+
+* 3d normalized orientation vector. In range \[-1,1] for each x,y,z axis
+
+* FOV : Horizontal field of view in degrees in range \[0,180]
+
+### Light:
+
+* identifier: l
+
+* x,y,z coordinates of the light point
+
+* the light brightness ratio in range \[0.0,1.0]
+
+* R,G,B colors in range \[0-255]
+
+### Sphere
+
+* identifier: sp
+
+* x,y,z coordinates of the sphere center
+
+* the sphere diameter
+
+* R,G,B colors in range \[0-255]
+
+### Plane
+
+* identifier: pl
+
+* x,y,z coordinates
+
+* 3d normalized orientation vector. In range \[-1,1] for each x,y,z axis
+
+* R,G,B colors in range \[0-255]
+
+### Square
+
+* identifier: sq
+
+* x,y,z coordinates of the square center
+
+* 3d normalized orientation vector. In range \[-1,1] for each x,y,z axis
+
+* side size
+
+* R,G,B colors in range \[0-255]
+
+### Cylinder
+
+* identifier: cy
+
+* x,y,z coordinates
+
+* 3d normalized orientation vector. In range \[-1,1] for each x,y,z axis
+
+* the cylinder diameter
+
+* the cylinder height
+
+* R,G,B colors in range \[0,255]
+
+### Triangle
+
+* identifier: tr
+
+* x,y,z coordinates of the first point
+
+* x,y,z coordinates of the second point
+
+* x,y,z coordinates of the third point
+
+* R,G,B colors in range \[0,255]
+
+***
+
+**FOV** - parameter which define how much of the scene we see
+
+***
+
+**[The .bmp file format](https://web.archive.org/web/20080912171714/http://www.fortunecity.com/skyscraper/windows/364/bmpffrmt.html)**
 
 ***
 

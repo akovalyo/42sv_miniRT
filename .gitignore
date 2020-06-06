@@ -6,3 +6,7 @@
 .vscode
 backup
 a.out
+.fuse*
+test/
+*.bmp
+minirt
