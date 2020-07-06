@@ -6,7 +6,7 @@
 #    By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 21:26:34 by akovalyo          #+#    #+#              #
-#    Updated: 2020/06/05 22:12:50 by akovalyo         ###   ########.fr        #
+#    Updated: 2020/07/06 12:07:58 by akovalyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ SRC_FOLDER = srcs/
 LIBFT_DIR = libft/
 LIBFT_INCL = libft/includes/
 INCL = includes/
-INCLLIN = incl_lin/
-INCLMAC = incl_mac/
+INCLLIN = includes/incl_lin/
+INCLMAC = includes/incl_mac/
 SRC=main.c \
 	read.c \
 	parser.c \
