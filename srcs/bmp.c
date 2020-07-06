@@ -14,8 +14,8 @@
 
 void	bm_fileheader(t_bmp *bmp, t_bmfileheader *bmfh)
 {
-	bmfh->type[0] = 'B';
-	bmfh->type[1] = 'M';
+	bmfh->type[0] = 0x42;
+	bmfh->type[1] = 0x4D;
 	bmfh->size = bmp->f_size;
 	bmfh->reserved1 = 0;
 	bmfh->reserved2 = 0;
@@ -61,7 +61,7 @@ void	save_bmp(t_scene *scn)
 	bm_fileheader(&bmp, &bmfh);
 	bm_infoheader(scn, &bmp, &bmih);
 	create_name(scn, &bmp);
-	if ((bmp.fd = open(bmp.name, O_CREAT | O_WRONLY | O_TRUNC)) == -1)
+	if ((bmp.fd = open(bmp.name, O_CREAT | O_WRONLY | S_IRWXU)) == -1)
 	{
 		free(scn->img_name);
 		close_minirt("Cannot save image", scn);

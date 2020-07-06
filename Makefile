@@ -77,7 +77,7 @@ test_lin:
 	@gcc $(FLAGS) $(NAME) -g $(SRCS) -I $(LIN_MLX_DIR) -L $(LIN_MLX_DIR) $(LIN_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLLIN)
 
 test:
-	@gcc $(FLAGS) $(NAME) $(FLAGS) -g $(SRCS) -I $(MAC_MLX_DIR) -L $(MAC_MLX_DIR) $(MAC_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLMAC)
+	@gcc $(FLAGS) $(NAME) -g $(SRCS) -I $(MAC_MLX_DIR) -L $(MAC_MLX_DIR) $(MAC_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLMAC)
 	
 memory_lin: 
 	@clang $(FLAGS) $(NAME) -g -fsanitize=address -fno-omit-frame-pointer $(SRCS) -I $(LIN_MLX_DIR) -L $(LIN_MLX_DIR) $(LIN_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLLIN)

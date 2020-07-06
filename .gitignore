@@ -10,3 +10,5 @@ a.out
 test/
 *.bmp
 minirt
+minirt.dSYM
+tmp.c
