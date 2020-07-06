@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 11:38:18 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/05 22:07:57 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/06 10:18:03 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -354,7 +354,7 @@ int					create_trgb(t_color rgb);
 ** vectors.c
 */
 
-double				v_size(t_vect vect);
+double				v_length(t_vect vect);
 t_vect				v_norm(t_vect vect);
 t_vect				v_refl(t_vect vect, t_vect norm);
 t_vect				cross_prod(t_vect u, t_vect v);

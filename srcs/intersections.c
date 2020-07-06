@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/31 15:48:33 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/04 13:26:10 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/06 10:18:03 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,12 @@ int		inters_sq(t_shape *sh, t_cam cam, double *dist)
 		isq.up = v_mult(isq.up, sh->d / 2);
 		isq.up = (v_prod(isq.up, isq.dir) <= 0) ? v_mult(isq.up, -1) : isq.up;
 		isq.r = (v_prod(isq.r, isq.dir) <= 0) ? v_mult(isq.r, -1) : isq.r;
-		isq.a_up = acos(v_prod(isq.up, isq.dir) / (v_size(isq.up) *
-			v_size(isq.dir)));
-		isq.a_r = acos(v_prod(isq.r, isq.dir) / (v_size(isq.r) *
-			v_size(isq.dir)));
-		if ((v_size(isq.dir) * cos(isq.a_up) < v_size(isq.up)) &&
-		(v_size(isq.dir) * cos(isq.a_r) < v_size(isq.r)))
+		isq.a_up = acos(v_prod(isq.up, isq.dir) / (v_length(isq.up) *
+			v_length(isq.dir)));
+		isq.a_r = acos(v_prod(isq.r, isq.dir) / (v_length(isq.r) *
+			v_length(isq.dir)));
+		if ((v_length(isq.dir) * cos(isq.a_up) < v_length(isq.up)) &&
+		(v_length(isq.dir) * cos(isq.a_r) < v_length(isq.r)))
 		{
 			*dist = new_d;
 			return (1);

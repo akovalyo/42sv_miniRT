@@ -6,19 +6,19 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 12:09:54 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/04 13:28:51 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/06 11:11:13 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-t_vect	v_div(t_vect vect, double num)
+t_vect	v_div(t_vect vect, double div)
 {
 	t_vect	new;
 
-	new.x = vect.x / num;
-	new.y = vect.y / num;
-	new.z = vect.z / num;
+	new.x = vect.x / div;
+	new.y = vect.y / div;
+	new.z = vect.z / div;
 	return (new);
 }
 
@@ -42,13 +42,13 @@ t_vect	v_sub(t_vect vect_1, t_vect vect_2)
 	return (new);
 }
 
-t_vect	v_mult(t_vect vect, double num)
+t_vect	v_mult(t_vect vect, double mult)
 {
 	t_vect	new;
 
-	new.x = num * vect.x;
-	new.y = num * vect.y;
-	new.z = num * vect.z;
+	new.x = mult * vect.x;
+	new.y = mult * vect.y;
+	new.z = mult * vect.z;
 	return (new);
 }
 

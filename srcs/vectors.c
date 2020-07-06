@@ -6,13 +6,13 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 13:59:19 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/04 13:46:37 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/06 10:33:55 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-double	v_size(t_vect vect)
+double	v_length(t_vect vect)
 {
 	return (sqrt(vect.x * vect.x + vect.y
 	* vect.y + vect.z * vect.z));
@@ -21,11 +21,19 @@ double	v_size(t_vect vect)
 t_vect	v_norm(t_vect vect)
 {
 	double	len;
+	double	inv;
 	t_vect	new;
-
-	len = v_size(vect);
-	new = v_div(vect, len);
-	return (new);
+	
+	len = v_length(vect);
+	if (len > 0)
+	{
+		inv = 1/len;
+		new.x = vect.x * inv;
+		new.y = vect.y * inv;
+		new.z = vect.z * inv;
+		return (new);
+	}
+	return (vect);
 }
 
 t_vect	cross_prod(t_vect a, t_vect b)
