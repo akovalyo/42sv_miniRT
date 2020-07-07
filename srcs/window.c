@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 09:06:41 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/04 13:47:31 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/06 23:11:36 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		start_wind(t_scene *scn)
 
 int		key_hooks(int key, t_scene *scn)
 {
-	printf("%d\n", key);
 	if (key == ESCAPE)
 	{
 		mlx_destroy_window(scn->mlx, scn->win);
