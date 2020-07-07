@@ -19,15 +19,8 @@ MacOS
 
 **Compile:**
 
-Ubuntu:
-
 ```
-make linux
-```
-
-MacOS:
-```
-make
+make 
 ```
 
 **Run:**
