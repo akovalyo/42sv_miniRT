@@ -6,7 +6,7 @@
 #    By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 21:26:34 by akovalyo          #+#    #+#              #
-#    Updated: 2020/07/06 12:07:58 by akovalyo         ###   ########.fr        #
+#    Updated: 2020/07/07 09:56:04 by akovalyo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ mlx_comp:
 	@make -C $(MAC_MLX_DIR) re
 
 $(NAME): mlx_comp libftcomp 
-	@gcc $(FLAGS) $(NAME) $(FLAGS) $(SRCS) -I $(MAC_MLX_DIR) -L $(MAC_MLX_DIR) $(MAC_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLMAC)
+	@gcc $(FLAGS) $(NAME) $(SRCS) -I $(MAC_MLX_DIR) -L $(MAC_MLX_DIR) $(MAC_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLMAC)
 	
 linux: mlxlin_comp libftcomp 
 	@gcc $(FLAGS) $(NAME) $(SRCS) -I $(LIN_MLX_DIR) -L $(LIN_MLX_DIR) $(LIN_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLLIN)
@@ -86,4 +86,4 @@ memory:
 	@clang $(FLAGS) $(NAME) -g -fsanitize=address -fno-omit-frame-pointer $(SRCS) -I $(MAC_MLX_DIR) -L $(MAC_MLX_DIR) $(MAC_FLAGS) -I $(LIBFT_INCL) -L $(LIBFT_DIR) -lft -I $(INCL) -I $(INCLMAC)
 
 norm:
-	@norminette -R CheckForbiddenSourceHeader $(SRCS) $(INCL)*.h $(INCLLIN)*.h $(INCLMAC)*.h $(LIBFT_DIR)*.c $(LIBFT_INCL)*.h
+	norminette -R CheckForbiddenSourceHeader $(SRCS) $(INCL)*.h $(INCLLIN)*.h $(INCLMAC)*.h $(LIBFT_DIR)*.c $(LIBFT_INCL)*.h
