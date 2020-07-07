@@ -23,11 +23,11 @@ t_vect	v_norm(t_vect vect)
 	double	len;
 	double	inv;
 	t_vect	new;
-	
+
 	len = v_length(vect);
 	if (len > 0)
 	{
-		inv = 1/len;
+		inv = 1 / len;
 		new.x = vect.x * inv;
 		new.y = vect.y * inv;
 		new.z = vect.z * inv;

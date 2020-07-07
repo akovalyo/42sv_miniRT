@@ -103,7 +103,7 @@ void	render_main(t_scene *scn)
 int		main(int argc, char **argv)
 {
 	t_scene scn;
-	
+
 	init_data(&scn);
 	if (argc >= 2 && argc <= 4)
 	{
