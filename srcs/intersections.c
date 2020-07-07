@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/31 15:48:33 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/07/06 10:18:03 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/07 16:08:49 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ int		inters_tr(t_shape *sh, t_cam cam, double *dist)
 	if (tr.p2 < 0.0 || tr.p1 + tr.p2 > 1.0)
 		return (0);
 	n_dist = (1.0 / tr.crosspnt) * v_prod(tr.ra_cross, tr.v_b);
-	if (n_dist > 0.0001 && n_dist < *dist)
+	if (n_dist > -INFINITY && n_dist < *dist)
 	{
 		*dist = n_dist;
 		return (1);

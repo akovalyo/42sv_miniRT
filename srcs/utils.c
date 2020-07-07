@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/31 16:06:35 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/04 13:46:11 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/07 16:10:47 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int		cy_activate(t_shape *sh, t_cam cam, t_intercy *cy)
 {
 	t_vect v_cam;
 
-	cy->dist_a = 1000;
-	cy->dist_b = 1000;
+	cy->dist_a = INFINITY;
+	cy->dist_b = INFINITY;
 	v_cam = v_sub(cam.pos, sh->pos);
 	sh->cy_a = v_prod(cam.view_ray, cam.view_ray) -
 		(v_prod(cam.view_ray, sh->orient) * v_prod(cam.view_ray, sh->orient));
@@ -64,7 +64,7 @@ void	tr_vectors(t_intertr *tr, t_shape *sh, t_cam cam)
 	tr->rb_cross = cross_prod(cam.view_ray, tr->v_b);
 	tr->crosspnt = v_prod(tr->v_a, tr->rb_cross);
 	tr->point = 1;
-	if (tr->crosspnt > -0.0001 && tr->crosspnt < 0.0001)
+	if (tr->crosspnt > -INFINITY && tr->crosspnt < 0.0001)
 		tr->point = 0;
 }
 

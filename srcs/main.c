@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 11:05:07 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/05 22:07:50 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/07 16:06:29 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	render(t_scene scn, t_cam cam, t_color *color)
 	t_shape		*shape;
 
 	*color = (t_color){0, 0, 0, 0};
-	dist = 1000;
+	dist = INFINITY;
 	if ((pos = intersections(scn.shapes, cam, &dist)) >= 0)
 	{
 		shape = scn.shapes;
