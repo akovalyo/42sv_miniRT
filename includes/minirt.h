@@ -22,7 +22,6 @@
 # include "mlx.h"
 # include "keys.h"
 # include <float.h>
-# include <stdio.h> //
 
 typedef struct		s_vect
 {
@@ -285,6 +284,7 @@ double				norm_color(double col);
 void				close_minirt(char *message, t_scene *scn);
 int					cy_activate(t_shape *sh, t_cam cam, t_intercy *cy);
 void				tr_vectors(t_intertr *tr, t_shape *sh, t_cam cam);
+int					close_program(void *prm);
 
 /*
 ** read.c

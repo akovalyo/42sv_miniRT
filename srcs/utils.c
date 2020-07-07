@@ -67,3 +67,10 @@ void	tr_vectors(t_intertr *tr, t_shape *sh, t_cam cam)
 	if (tr->crosspnt > -0.0001 && tr->crosspnt < 0.0001)
 		tr->point = 0;
 }
+
+int		close_program(void *prm)
+{
+	prm = (void *)prm;
+	exit(0);
+	return (0);
+}

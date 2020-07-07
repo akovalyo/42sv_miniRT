@@ -116,10 +116,9 @@ int		main(int argc, char **argv)
 		read_rt(&scn, argv[1]);
 		start_wind(&scn);
 		render_main(&scn);
-		mlx_hook(scn.win, 02, 1L << 0, key_hooks, &scn);
+		mlx_hook(scn.win, 17, 131072, close_program, 0);
+		mlx_hook(scn.win, 2, 1, key_hooks, &scn);
 		mlx_loop(scn.mlx);
-		mlx_destroy_image(scn.mlx, scn.img_ptr);
-		mlx_destroy_window(scn.mlx, scn.win);
 	}
 	else
 		ft_printf("usage: %s FILE.RT [--save] [name]\n", argv[0]);
