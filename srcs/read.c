@@ -56,6 +56,11 @@ void	line_process(t_scene *scn)
 
 void	read_rt(t_scene *scn, char *file)
 {
+	int file_len;
+
+	file_len = ft_strlen(file);
+	if (ft_strncmp(file + file_len - 3, ".rt", 3) != 0)
+		close_minirt("Is not .rt file", scn);
 	if ((scn->fd = open(file, O_RDONLY)) < 0)
 		close_minirt("Can not open file", scn);
 	while ((scn->gnl = get_next_line(scn->fd, &(scn)->line)) > 0)
