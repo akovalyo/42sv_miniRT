@@ -11,7 +11,7 @@ The goal is to make program that will render simple Computer-Generated-Images.
 
 **[minilibx linux](https://github.com/Artygo8/minilibx_linux)**
 
-MacOS
+MacOS 10.13.4
 
 ***
 
