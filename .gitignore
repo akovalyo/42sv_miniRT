@@ -9,7 +9,11 @@ a.out
 .fuse*
 test/
 *.bmp
-minirt
-minirt.dSYM
+miniRT
+*.dSYM
 tmp.c
 libft.a
+eval.txt
+tst
+libft.a
+libmlx.a

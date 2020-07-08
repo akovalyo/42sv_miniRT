@@ -14,9 +14,13 @@
 
 void	free_scene(t_scene *scn)
 {
-	free_cam(scn);
-	free_light(scn);
-	free_shape(scn);
+	if (scn->cam_count > 0)
+		free_cam(scn);
+	if (scn->light_count > 0)
+		free_light(scn);
+	if (scn->pl_count > 0 || scn->sp_count > 0 || scn->sq_count > 0 ||
+			scn->cy_count > 0 || scn->tr_count > 0)
+		free_shape(scn);
 }
 
 void	free_cam(t_scene *scn)

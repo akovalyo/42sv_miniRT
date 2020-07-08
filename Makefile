@@ -12,7 +12,7 @@
 
 
 SYSTEM := $(shell uname)
-NAME=minirt
+NAME=miniRT
 FLAGS=-Wall -Wextra -Werror -o $(NAME)
 SRC_FOLDER = srcs/
 LIBFT_DIR = libft/
