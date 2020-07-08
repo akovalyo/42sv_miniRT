@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 10:32:31 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/04 13:28:20 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/08 13:32:42 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	free_scene(t_scene *scn)
 {
-	if ((!scn->cams) > 0)
+	if (scn->cams)
 		free_cam(scn);
-	if ((!scn->lights) > 0)
+	if (scn->lights)
 		free_light(scn);
-	if ((!scn->shapes) > 0)
+	if (scn->shapes)
 		free_shape(scn);
 }
 
