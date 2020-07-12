@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 12:25:50 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/04 13:45:54 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/12 14:30:54 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		shadow(t_scene scn, t_shape *sh)
 
 	inter = 0;
 	cam = *scn.curr_cam;
-	cam.pos = v_add(cam.p_inter, v_mult(sh->orient_n, 0.0001));
+	cam.pos = v_add(cam.p_inter, v_mult(sh->orient_n, 0.00001));
 	cam.view_ray = v_norm(v_sub(scn.lights->pos, cam.pos));
 	dist = p_dist(scn.lights->pos, cam.pos);
 	if (intersections(scn.shapes, cam, &dist) >= 0)
