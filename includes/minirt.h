@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 11:38:18 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/07/06 10:18:03 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/12 23:02:08 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -381,6 +381,7 @@ void				min_value(double *a, double *b);
 void				free_scene(t_scene *scn);
 void				free_cam(t_scene *scn);
 void				free_light(t_scene *scn);
+int					shape_size(t_shape *lst);
 void				free_shape(t_scene *scn);
 
 /*

@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 10:32:31 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/07/08 13:32:42 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/12 23:01:54 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,27 @@ void	free_light(t_scene *scn)
 	}
 }
 
+int		shape_size(t_shape *lst)
+{
+	int i;
+
+	i = 0;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
+
 void	free_shape(t_scene *scn)
 {
 	t_shape	*tmp;
 	int		num_sh;
 
-	num_sh = scn->pl_count + scn->sp_count + scn->sq_count +
-		scn->cy_count + scn->tr_count;
+	num_sh = shape_size(scn->shapes);
 	while (num_sh > 0)
 	{
 		ft_printf("Free shape #%d\n", num_sh);

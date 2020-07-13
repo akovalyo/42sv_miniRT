@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 12:54:52 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/07/08 13:21:18 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/12 23:00:13 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void		parse_cam(t_scene *scn, char **tab)
 	double	fov;
 	t_cam	*camera;
 
-	scn->cam_count++;
 	if (ft_strarraylen(tab) != 4)
 		close_minirt("Invalid camera data", scn);
 	if (!atocoord(tab[1], &view))
@@ -63,6 +62,7 @@ void		parse_cam(t_scene *scn, char **tab)
 	fov = ft_atof(tab[3]);
 	if (fov < 0 || fov > 180)
 		close_minirt("Horizontal field of view is not in range 0 and 180", scn);
+	scn->cam_count++;
 	if (!(camera = new_camera(view, vector, fov, scn->cam_count)))
 		close_minirt(NULL, scn);
 	add_cam(&(scn)->cams, camera);
@@ -76,7 +76,6 @@ void		parse_light(t_scene *scn, char **tab)
 	double	ratio;
 	t_color	rgb;
 
-	scn->light_count++;
 	if (ft_strarraylen(tab) != 4)
 		close_minirt("Invalid light data", scn);
 	if (!atocoord(tab[1], &pos))
@@ -86,6 +85,7 @@ void		parse_light(t_scene *scn, char **tab)
 		close_minirt("Light brightness ratio is not in range 0 and 1", scn);
 	if (atorgb(tab[3], &rgb))
 		close_minirt("Invalid RGBfor light, should be in range 0-255", scn);
+	scn->light_count++;
 	if (!(light = new_light(pos, ratio, rgb, scn->light_count)))
 		close_minirt(NULL, scn);
 	add_light(&(scn)->lights, light);
