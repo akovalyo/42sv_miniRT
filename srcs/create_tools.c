@@ -6,7 +6,7 @@
 /*   By: akovalyo <al.kovalyov@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 12:19:02 by akovalyo          #+#    #+#             */
-/*   Updated: 2020/06/04 13:21:42 by akovalyo         ###   ########.fr       */
+/*   Updated: 2020/07/12 16:31:58 by akovalyo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_cam	*new_camera(t_vect view, t_vect vector, double fov, int num)
 	cam->pos.y = view.y;
 	cam->pos.z = view.z;
 	cam->orient = v_norm(vector);
+	cam->orient.x += 0.0001;
 	cam->fov = fov;
 	cam->cam_num = num;
 	return (cam);
